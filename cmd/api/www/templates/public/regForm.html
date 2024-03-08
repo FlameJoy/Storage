@@ -1,0 +1,24 @@
+{{ template "head" .}}
+<h1>Registration form</h1>
+{{ template "menu" .}}
+<h2>Conditions:</h2>
+    <ul>
+        <li>Username must contain only letters & numbers</li>
+        <li>Username must be longer than 7 characters, but shorter than 24</li>
+        <li>Password must be of significant complexity</li>
+    </ul>
+    {{if .msg}}
+    <h3>Error: {{.msg}}</h3>
+    {{end}}
+    <form action="/registration" method="post">
+        <label for="username">Username</label><br>
+        <input type="text" name="username" id="username" {{if .user}} value="{{.user.Username}}" {{end}}><br>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="email" {{if .user}} value="{{.user.Email}}" {{end}}><br>
+        <label for="password1">Write a password</label><br>
+        <input type="text" name="password1" id="password1"><br>
+        <label for="password2">Repeat password</label><br>
+        <input type="text" name="password2" id="password2"><br>
+        <input type="submit" value="OK"><br>
+    </form>
+{{ template "footer" .}}

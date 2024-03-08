@@ -1,0 +1,7 @@
+{{ define "menu" }}
+<ul>
+    {{range .menu}}
+    <li><a href="{{.Link}}">{{.Title}}</a></li>
+    {{end}}
+</ul>
+{{end}}

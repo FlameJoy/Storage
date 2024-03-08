@@ -1,0 +1,15 @@
+{{template "head" .}}
+    <h1>Profile</h1>
+    {{template "menu" .}}
+    <ul>
+        <li><a href="/user/changePswd" class="auth-link">Change password</a></li>
+        <li><a href="/user/logout" class="auth-link">Logout</a></li>
+        <!-- <li><a href="/user/gallery" class="auth-link">Gallery</a></li> -->
+    </ul>
+    <div class="profile">
+        <div class="profile-data">
+          <h3>USERNAME: {{.user.Username}}</h3>
+          <h3>EMAIL: {{.user.Email}}</h3>
+          <h3>REGISTRATION DATE: {{.user.CreatedAt}}</h3>
+        </div>
+{{template "footer" .}}

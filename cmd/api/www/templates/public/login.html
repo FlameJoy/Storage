@@ -1,0 +1,18 @@
+{{template "head" .}}
+<h1>Login</h1>
+    {{ template "menu" .}}
+    {{if .msg}}
+    <h3>{{.msg}}</h3>
+    {{end}}
+    <form action="/login" method="post">
+        <label for="username">Username</label><br>
+        <input type="text" name="username" id="username"><br>
+        <label for="password">Password</label><br>
+        <input type="text" name="password" id="password"><br>
+        <input type="submit" value="OK"><br>
+    </form>
+    <ul>
+        <li><a href="/registration">Registration</a></li>
+        <li><a href="/recovery">Forgot password?</a></li>
+    </ul>
+{{template "footer" .}}

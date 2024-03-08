@@ -1,0 +1,12 @@
+{{template "head" .}}
+    <h1>Enter Email associated with account</h1>
+    {{template "menu" .}}
+    {{if .msg}}
+    <h3>{{.msg}}</h3>
+    {{end}}
+    <form action="/recovery" method="post">
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="email"><br>
+        <input type="submit" value="OK">
+    </form>
+{{template "footer" .}}

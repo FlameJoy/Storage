@@ -1,0 +1,23 @@
+{{template "head" .}}
+    <h1>Change Password</h1>
+    {{template "menu" .}}
+    <h2>Conditions:</h2>
+    <ul>
+        <li>Username must contain only letters & numbers</li>
+        <li>Username must be longer than 4 characters, but shorter than 51</li>
+        <li>Password must be of significant complexity</li>
+        <li>Password must be longer than 7 characters, but shorter than 24</li>
+    </ul>
+    {{if .msg}}
+    <h3>{{.msg}}</h3>
+    {{end}}
+    <form action="/user/changePswd" method="post">
+        <label for="old_password">Old Password</label><br>
+        <input type="text" name="old_password" id="old_password"><br>
+        <label for="password1">New Password</label><br>
+        <input type="password1" name="password1" id="password1"><br>
+        <label for="password2">New Password Repeate</label><br>
+        <input type="password2" name="password2" id="password2"><br>
+        <input type="submit" value="OK">
+    </form>
+{{template "footer" .}}
